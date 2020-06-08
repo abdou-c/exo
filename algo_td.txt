@@ -1,0 +1,506 @@
+﻿Correction du TD
+exercice 1 :
+
+Ecrire un programme qui saisit deux entiers a et b, calcule et affiche le quotient entier, le reste de la division et le ratio (quotient réel).
+Algo : nombres
+// declaration des variables
+Var a, b, qe, r : entire
+qr : reel 
+debut
+repeter
+afficher (“saisir nombre entier”)
+lire (a)
+jusqu’a (a<=0)
+afficher (“saisir nombre reel”)
+lire (b)
+//calcul du quotient réel
+qe <- a div b
+afficher (“le quotient entire est :”, qe)
+//calcul du reste
+R <- a mod b
+Afficher (“le reste de la division est :”, r)
+//calcul du quotient reel
+qr <- a/b
+afficher (“le quotient reel est :”, qr)
+FIn
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 2
+Ecrire un programme qui demande à l’utilisateur de donner le rayon d’un cercle et lui retourne sa surface et son périmètre. 
+PI =  4 * arc tangeante de 1. la fonction arc tangeante est atan ex : atan(2).
+Algo : cercle
+//déclaration des constantes
+Const pi <- 4*atan(1)
+//déclaration des variables
+Var r, s, p
+Début
+Afficher (‘saisir le rayon ’)
+Lire (r)
+//calcul de la surface
+S <- r*r*pi
+Afficher (‘la surface du cercle est :’, s)
+//calcul du périmètre
+P <- 2*pi*r
+Afficher (‘le perimetre du cercle est :’, p)
+Fin
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+
+Exercice 3 :
+Version 1 :
+Faire un programme qui saisit 3 résistances : R1, R2 et R3.
+Calculer et afficher la résistance en série : R1 + R2 +R3
+Calculer et afficher la résistance en parallèle : (R1 * R2 * R3) / (R1*R2 + R2*R3 + R1*R3)
+Version 2 :
+Demander à l’utilisateur d’indiquer son choix.
+S’il entre la valeur 1, calculer et afficher la fréquence en série.
+S’il entre la valeur 2, calculer et afficher la fréquence en parallèle.
+Algo : résistance
+//version 1
+//déclaration des variables
+Var R1, R2, R3, res_serie, res_paral, freq :reel
+Début 
+Afficher (‘saisir la première résistance’)
+Lire (R1)
+Afficher (‘saisir la deuxième résistance’)
+Lire (R2)
+Afficher (‘saisir la troisième résistance’)
+Lire (R3)
+//calcul de la résistance en série 
+Res_serie <- R1 + R2 +R3
+Afficher (‘la résistance en série est :’, res_serie)
+//calcul de la résistance en parallèle
+Res_paral <- (R1 * R2 * R3) / (R1*R2 + R2*R3 + R1*R3)
+Afficher (‘la résistance en parallèle est :’, res_paral)
+//version 2
+Var R1, R2, R3, res_serie, res_paral, freg : réel
+Choix : entier
+Si (choix == 1) alors 
+Freq <- (R1/res_serie + R2/res_serie + R3/res_serie)/ res_serie
+Sinon si (choix == 2) alors
+Freq <- (R1/res_paral + R2/res_paral + R3/res_paral)/res_paral
+Sinon 
+Afficher (‘votre choix n’est pas valide’)
+Finsi
+Finsi
+Fin
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 4
+Ecrire un programme qui saisit un réel x et un entier n et affiche x à la puissance n.
+Version 1 : utiliser la fonction pow  du fichier d’en-tête <math.h>  ex : pow(x,n)
+Version 2 : en utilisant un boucle
+Algo : puissance
+//version 1
+//déclaration des variables
+Var x, p : réel
+n : entier
+debut
+afficher (‘saisir un réel’)
+lire (x)
+afficher (‘saisir un entier’)
+lire (n)
+//affiche de x à la puissance n
+P <- pow (x, n)
+Afficher (x,’à la puissance’,n, ‘est:’, p)
+//version 2
+Pour I allant de 1 à n faire
+afficher(i)
+p <- p * x
+finpour
+aaficher ("le résultat est :", p)
+fin
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 5 :
+Ecrire un programme qui saisit 5 variables de type entier au clavier et qui affiche leur somme. Utiliser une boucle (for ou while ou do..while).
+Algo : somme
+// declaration des variables
+Var n, i, somme, val :entier
+Somme <- 0
+N <- 5
+Debut
+Pour i allant de 1 à n faire
+Afficher (“veuillez saisir une valeur”)
+Lire (val)
+Somme <- somme + val
+Finpour
+Afficher (“la somme est :”, somme)
+fin
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 6 :
+Faire un programme qui saisit  les coordonnées de 2 points A (x1, y1) et b(x2, y2) et qui affiche la distance entre les 2 points.
+Formule : distante = racine carrée de ((x1 – x2)2  + (y1 – y2)2)
+ Racine carrée : sqrt. Ex : sqrt(7) ; <math.h>
+Algo : distance
+
+//declaration des variables
+Var x1, y1, x2, y2, dist : reel
+
+Debut
+Afficher (“saisir les cordonnees de a”)
+Lire (x1, y1)
+Afficer (“saisir les coordonnees de b”)
+Lire (x2, y2)
+//affiche de la distance
+Dist <- sqrt (sqr(x1 - x2) + sqr(y1 – y2))
+Afficher (“la distance est :”, dist)
+fin
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 7 :  Décomposition d’un montant en euros Écrire un algorithme permettant 
+de décomposer un montant entré au clavier en billets de 20, 10, 5 euros et pièces 
+de 2, 1 euros, de façon à minimiser le nombre de billets et de pièces.
+Algo : decomposition
+//declaration des variables
+Var montant_euro, billet_20, billet_10, billet_5, piece_2, piece_1: entier
+Debut
+Afficher (“saisir un montant”)
+Lire (montant_euro)
+//decomposition du montant
+billet_20 <- montant_euro – 20
+billet_10 <- montant_euro mod 20 – 10
+billet_5 <- montant_euro mod 20 mod 10 – 5
+piece_2 <- montant_euro mod 20 mod 10 mod 5 – 2
+piece_1 <- montant_euro mod 20 mod 10 mod 5 – 1
+afficher (“le montant decomposer est :”,billet_20, billet_10, billet_5, piece_2, puece_1)
+Fin
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 8 : Ecrire un algorithme permettant de résoudre une équation du second degré. 
+Ax2 + bx + c = 0
+ Algo : equation
+ //declaration des variables
+ Var a, b, c, delta, x1, x2, x0 : reel
+ debut 
+Afficher (“saisir les valeurs de l’equation”)
+
+ Lire (a, b, c)
+ delta <- sqr(b) – 4 * a * c
+ Si delta > 0 alors
+ Afficher (“l’equation admet deux solutions distinctes”) 
+x1 <- -b + sqrt(delta)/2 * a 
+x2 <- -b – sqrt(delta)/2 * a 
+afficher (“la solution est:”, x1, ‘et’, x2) 
+sinon si delta = 0 alors 
+afficher (“l’equation admet une seule solution”)
+ x0 <- -b/2 * a 
+afficher (“la solution est:”, x0)
+ sinon afficher (“l’equation n’admet pas de solution dans R”)
+ finsi
+     finsi
+ fin
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 9 : Ecrire un algorithme qui donne la durée de vol en heure minute connaissant l'heure de départ et l'heure d'arrivée. 
+a. On considère que le départ et l'arrivé ont lieu le même jour 
+b. On suppose que la durée de vol est inférieure à 24 heures mais peut avoir lieu le lendemain
+algo : durée
+//version a
+//declaration des variables
+Var duree_vol, heure_depart, minute_depart,  heure_arrivee, minute_arrivee, duree_heure, duree_minute: entier
+Debut
+Afficher (“saisir l’heure de depart”)
+Lire (heure_depart)
+Afficher (“saisir l’heure d’arrivée”)
+Lire (heure_arrivee)
+Afficher (“saisir les minutes d’arrivee”)
+Lire (minute_arrivee)
+Afficher (“saisir les minutes de depart”)
+Lire (minute_depart)
+Minute_arrivee <- minute_arrivee + heure_arrivee * 60
+Minute_depart <- minute_depart + heure_depart * 60
+Duree_vol <- minute_arrivee – minute_depart
+Duree_heure <- duree_vol div 60
+Duree_minute <- duree_vol mod 60
+Afficher (“la duree de vol est :”, duree_heure, duree_minute)
+//version b
+fin
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 10 : Ecrire un algorithme qui lit trois valeurs entières ( A, B et C) et qui permet de les trier par échanges successifs
+        Et enfin les afficher dans l'ordre. 
+    algo : croissance
+
+
+    
+    var A, B, C : entier
+
+
+    debut 
+    afficher ("saisir les valeurs entières")
+    lire (A, B, C) 
+    si (A<B et B<C) alors 
+    afficher ("l'ordre des valeurs est :",A,B,C)
+        sinon si (A<C et C<B) alors 
+        afficher ("l'ordre des valeurs est :",A,C,B)
+            sinon si (B<A et A<C) alors
+            afficher ("l'ordre des valeurs est :",B,A,C)
+                sinon si (B<C et C<A) alors
+                afficher ("l'ordre des valeurs est :",B,C,A)
+                    sinon si (C<A et A<B) alors
+                    afficher ("l'ordre des valeurs est :",C,A,B)
+                        sinon si (C<B et B<A) alors
+                        afficher ("l'ordre des valeurs est :",C,B,A)
+                        finsi
+                    finsi
+                finsi
+            finsi
+        finsi
+    finsi
+fin
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+    Exercice 11 : Ecrire un algorithme calculatrice permettant la saisie du premier entier (a) de l'opération
+     ( + ou – ou * ou / : sont des caractères) et du deuxième entier (b) et qui affiche le résultat.
+    
+     algo : calculatrice
+
+     var    a, b, : entier
+             r : réel
+            operateur : caractères
+     
+     debut
+        afficher ("saisir le premier entier")
+        lire (a)
+        afficher ("saisir l'operateur")
+        lire (operateur)
+        afficher ("saisir le deuxième entier")
+        lire (b)
+       si (operateur = '+') alors
+         r <- a + b
+         sinon si (operateur = '-') alors
+                 r <- a - b 
+                 sinon si  (operateur = '*') alors
+                        r <- a * b 
+                        sinon si (operateur = '/') alors
+                             r <- a/b
+                             sinon 
+                                    afficher ("le calcul est invalide")
+                            finsi
+                        finsi
+                finsi
+        finsi
+     fin
+ ====================================================================
+---------------------------------------------------------------------
+=====================================================================   
+ 
+Exercice 12 : Un nombre est parfait s’il est égal à la somme de ses diviseurs stricts (différents de lui-même).
+ Ainsi par exemple, l’entier 6 est parfait car 6 = 1 + 2 + 3. 
+Écrire un algorithme permettant de déterminer si un entier naturel est un nombre parfait.
+
+algo : nombre_parfait
+
+var nbr,i,som:entier
+Debut
+  afficher("Entrer un nombre")
+  saisir(nbr)
+som<--0
+pour(i<--i a nbr-1)Faire
+   si(nbr mod i==0)alors
+      som<--som+i
+    fsi
+finPour
+  si(som==nbr)alors
+     afficher("Ce nombre est parfait")
+sinon
+     afficher("Afficher ce nombre n'est pas un nombre parfait")
+fsi
+FIN
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+
+Exercice 13 : Faire un programme qui saisit une date (jour, mois et année) at qui indique si la date est valide
+algo : date
+var date, jour, mois, annee, annee_actuelle
+debut
+afficher ("saisir une date")
+lire (jour, mois, annee)
+annee_actuelle <- 2020
+si (jour < 1 ou jour > 31) ou (mois > 12 ou mois < 1) ou (annee < 1 ou annee > annee_actuelle) ou (mois = 2 et jour > 29)
+ ou (annee mod 4 = 0 ou mois = 2 et jour < 29) 
+    afficher ("l'année n'est pas valide")
+sinon
+    afficher ("l'année est valide")
+finsi
+FIN
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 14 : Faire un programme qui saisit une date (jour, mois et année) at qui indique si l’année est bissextile
+
+algo : annee_bissextile
+var date, jour, mois, annnee
+
+debut
+afficher ("saisir une date")
+lire (jour, mois, annee)
+annee_actuelle <- 2020
+si (jour < 1 ou jour > 31) ou (mois > 12 ou mois < 1) ou (annee < 1 ou annee > annee_actuelle) ou (mois = 2 et jour > 29)
+ ou (annee mod 4 = 0 ou (mois = 2 et jour < 29))
+    afficher ("l'année n'est pas bissextile")
+sinon 
+ si(annee mod 4 = 0) alors
+    afficher ("l'annee est bissextile"
+sinon 
+afficher ("l'annee n'est pas bissextile")
+finsi
+    finsi          
+ FIN
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 15 : Ecrire un algorithme qui demande un nombre de départ, et qui calcule la somme des entiers jusqu'à ce nombre.
+ Par exemple si l'on tape 4 , l’algorithme doit calculer: 1 + 2 + 3+ 4 = 10 Réécrire l'algorithme qui calcule cette fois la moyenne !
+ algo : somme
+ var val, somme_val, i : entier
+
+ debut
+    afficher ("saisir une valeur")
+    lire (val)
+pour (i allant de 1 à n ) faire
+    som_val <- i++
+finpour
+Fin
+var val1
+moy = val1 / 2
+fin
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+
+Exercice 16 : Faire un programme qui calcule et affiche la division de a par b par soustractions successives
+algo : division_successive
+algo a, b, i : entier
+debut
+    repeter
+    afficher("saisir le dividant")
+    lire(a)
+    jusqu’a (a>0)
+
+    repeter
+    afficher("saisir le diviseur")
+    lire(b)
+    jusqu’a(b>0)
+i <= 0
+    tantque(a>=b) alors
+        a <= a-b
+        i++
+    fintantque
+
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+
+Exercice 17: Faire un programme qui calcule le PGCD de deux nombres saisis au clavier en utilisant l'astuce suivante:
+ soustrait le plus petit des deux entiers du plus grand jusqu'à ce qu'ils soient égaux.
+ algo : PGCD
+ var nbr1, nbr2 : entier
+ debut
+    repeter
+        afficher("saisir le premier nombre")
+        lire(nbr1)
+        jusqu’a(nbr1>0)
+    repeter
+    Afficer("saisir le deuxieme nombre")
+    lire(nbr2)
+    jusqu’a(nbr2>0)
+tantque (nbr1 != nbr2) alors
+    si(nbr1 < nbr2) alors
+    nbr2 <= nbr2 - nbr1
+    sinon
+        nbr1 <- nbr1 - nbr2
+    finsi
+fintantque
+afficher("le PGCD est :", nbr2)
+
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 18: Faire un programme qui calcule et affiche le PPCM de deux entiers saisis au clavier.
+algo :
+var nbr1, nbr2 : entier
+
+
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 19 : Ecrire l’algorithme qui affiche la somme des prix d'une suite d'articles en CFA (entiers) 
+saisies par l'utilisateur et se terminant par zéro.
+
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 20 : Ecrire un algorithme qui demande successivement 10 nombres à l'utilisateur, et qui affiche
+ à la fin le plus grand de ces 10 nombres Et affiche aussi son rang dans la liste saisie
+
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 21 : Ecrire un algorithme mettant en œuvre le jeu suivant entre deux joueurs :
+ Le premier utilisateur saisi un entier que le second doit deviner. Pour cela, il a le droit à autant de tentatives qu'il souhaite.
+  A chaque échec, le programme lui indique si l'entier est plus grand ou plus petit que sa proposition.
+   Un score est affiché lorsque l'entier est trouvé.
+
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+
+Exercice 22 : On se propose de saisir N entiers différents entre 1 et 100 (N étant un entier naturel compris entre 10 et 50) 
+puis afficher la plus longue séquence croissante tout en précisant la position du premier nombre de cette séquence.
+Exemple : Pour N=15
+ 1  2  3  1  2  3  4  5  6  7  8  2  3  4  5 
+Le programme affiche :
+La plus longue séquence est 1 * 2 * 3 * 4 * 5 * 6 * 7 * 8 *   qui débute à la position 4  et elle est de longueur 7
+
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 23. La multiplication des lapins. Vous allez faire l’acquisition d’un couple de bébés lapins. 
+Au bout d’un mois ce couple est adulte. Le mois suivant il donne naissance à un couple de bébés lapins : 
+vous avez maintenant 4 lapins. Puis chaque couple engendre tous les mois un nouveau couple deux mois après sa naissance. 
+Nous avons le schéma ci-contre :
+ Légende : m : bébé lapin ; M : lapin adulte. 
+• Mois 0. m m 
+• Mois 1. M M 
+• Mois 2. M M m m 
+• Mois 3. M M M M m m
+ • Mois 4. M M M M M M m m m m 
+Notons FN le nombre de lapins que l’on a au bout du N-ième mois. On convient que : F0 = 2. Nous avons donc F1 = 2 puis F2 = 4 et F3 = 6. Plaçons-nous au mois N + 2, nous aurons tous les couples de lapins du mois précédent (le mois N + 1) et toutes les progénitures des couples de lapins du mois N. Nous avons donc la relation : FN+2 = FN+1 + FN
+Rédiger un programme qui calcule de manière itérative le nombre de lapins au bout d’un an (le mois N = 12). 
+ Au bout de combien de mois dépasse-t’on le milliard de lapins ?
+
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 24: Nombre secret : écrire un programme qui demande à l’utilisateur 1 d’entrer un nombre
+ et à l’utilisateur 2 de le trouver en affichant, à chaque tentative, « trop grand » si le nombre entré est plus grand 
+ que le nombre secret, « trop petit » sinon. Le programme s’arrête quand l’utilisateur 2 a trouvé le nombre secret.
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+
+Exercice 25 : Ecrire le code C du programme qui affiche le texte suivant pour les chiffres de 1 à 10 :
+1 
+2 2 
+3 3 3
+Ecrire un programme qui saisit un nombre et qui dit si ce nombre est premier ou pas.
+
+====================================================================
+---------------------------------------------------------------------
+=====================================================================
+Exercice 26 : Faire un programme qui saisit une suite de nombre et qui dit les si les nombres saisis sont dans l’ordre croissant ou décroissant ou quelconque.
+
